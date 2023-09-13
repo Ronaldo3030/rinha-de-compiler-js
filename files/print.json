@@ -4,22 +4,22 @@
     "kind": "Print",
     "value": {
       "kind": "Str",
-      "value": "Hello world",
+      "value": "Hello World!!",
       "location": {
         "start": 7,
-        "end": 20,
+        "end": 22,
         "filename": "print.rinha"
       }
     },
     "location": {
       "start": 0,
-      "end": 21,
+      "end": 23,
       "filename": "print.rinha"
     }
   },
   "location": {
     "start": 0,
-    "end": 21,
+    "end": 23,
     "filename": "print.rinha"
   }
 }

@@ -1,0 +1,1 @@
+{"name":"print.rinha","expression":{"kind":"Print","value":{"kind":"Str","value":"Hello Worldddddddddds!!","location":{"start":7,"end":32,"filename":"print.rinha"}},"location":{"start":0,"end":33,"filename":"print.rinha"}},"location":{"start":0,"end":33,"filename":"print.rinha"}}
