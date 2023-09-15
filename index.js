@@ -8,7 +8,8 @@ const compile = (jsonCode) => {
   const ast = JSON.parse(jsonCode)
 
   const code = compileNode(ast.expression);
-  
+  // console.log(code)
+
   eval(code)
 }
 
