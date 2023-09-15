@@ -1,8 +1,14 @@
 const fs = require('fs')
-const { readData } = require('./utils')
+const { compileNode } = require('./utils')
 
 const fileName = process.argv[2]
 const file = fs.readFileSync(String(fileName), 'utf8')
-const data = JSON.parse(file)
 
-readData(data.expression)
+const compile = (jsonCode) => {
+  const ast = JSON.parse(jsonCode)
+
+  const code = compileNode(ast.expression);
+  eval(code)
+}
+
+compile(file);
