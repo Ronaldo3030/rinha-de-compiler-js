@@ -1,93 +1,58 @@
-<div align="center">
+# Meu Projeto da Rinha de Interpretador
+Este é um projeto que participa da Rinha de Interpretador, uma competição de programação que consiste em fazer um interpretador ou compilador que rode em uma máquina com 2 núcleos e 2G de RAM.
 
-![banner]
+O interpretador ou compilador deve trabalhar com uma árvore sintática abstrata (AST) que está armazenada no formato JSON. Essa AST é gerada por uma ferramenta específica disponível no https://github.com/aripiprazole/rinha-de-compiler.
 
-[<img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white">](https://discord.gg/e8EzgPscCw)
+A responsabilidade do projeto é receber esse JSON que contém a AST e, em seguida, interpretar ou compilar o programa de acordo com as informações fornecidas na AST.
 
-</div>
+## Funcionalidades
+O projeto implementa um interpretador em JavaScript que lê o JSON da AST e gera código JavaScript equivalente, usando a função eval para executar o código.
 
-# Introdução
+O projeto suporta os seguintes tipos de nós da AST:
 
-O ideal da rinha é fazer um interpretador ou compilador que rode em uma maquina com 2 núcleos e 2G de RAM.
+- Let: declaração de variável
+- Str: string literal
+- Var: referência a variável
+- Function: declaração de função
+- If: condicional
+- Call: chamada de função
+- Binary: operação binária
+- Int: inteiro literal
+- Print: impressão na tela
+## Requisitos
+Para executar o projeto, é necessário ter instalado:
 
-O seu interpretador ou compilador deve trabalhar com algo chamado "árvore sintática abstrata" que está armazenada no formato JSON. Essa árvore sintática abstrata será gerada por nós usando uma ferramenta específica disponível neste repositório.
+* Node.js
 
-Sua responsabilidade na tarefa é receber esse JSON que contém a árvore abstrata e, em seguida, interpretar ou compilar o programa de acordo com as informações fornecidas na árvore abstrata.
 
-Simplificando:
+## Como clonar a aplicação
+Para clonar a aplicação, você precisa ter o Git instalado no seu computador. Em seguida, execute o seguinte comando no terminal:
 
-1. Nós te damos um JSON com uma árvore dentro
-2. Voce roda o JSON
-3. Voce fica feliz que apareceu o resultado.
+```git clone https://github.com/seu-usuario/meu-projeto.git```
 
-## Para executar
+Isso irá criar uma pasta chamada meu-projeto com os arquivos do projeto.
+## Como usar
+Para usar o projeto, você precisa ter o Node.js instalado no seu computador. Em seguida, execute o seguinte comando na pasta do projeto:
 
-Cada projeto deve ter seu próprio `Dockerfile` para que consigamos rodar
+```npm i```
+
+Isso irá instalar as dependências necessárias para o projeto.
+
+Para rodar o interpretador, execute o seguinte comando:
+
+```node index.js (caminho do arquivo .json)```
+
+Onde (caminho do arquivo .json) é o caminho relativo ou absoluto do arquivo JSON que contém a AST que você quer interpretar.
+
+Por exemplo, para rodar o arquivo files/fib.json, execute:
+
+```node index.js files/fib.json```
+
+O resultado do programa será impresso na tela.
 
 ## Como testar
+Para testar o projeto, você pode usar o arquivo files/fib.rinha e gerar com o programa que disponibilizam no https://github.com/aripiprazole/rinha-de-compiler um JSON ou você pode usar diretamente o JSON que está em files/fib.json.
 
-Para testar você pode usar o arquivo `files/fib.rinha` e gerar com o programa que disponibilizamos
-aqui para um JSON ou você pode usar diretamente o JSON que está em `files/fib.json`.
+Durante a rinha, eles irão adicionar outros testes :)
 
-Durante a rinha nós iremos adicionar outros testes :)
-
-## Requisitos
-
-Você tem que fazer um PR, alterando o arquivo [PARTICIPANTS.md](PARTICIPANTS.md),
-com uma nova linha e seu repositório. Talvez isso seja mudado depois (fique atento).
-
-Seu repositório terá que ter uma imagem no root do repositório, e buildaremos a imagem
-no rankeamento.
-
-## Especificação
-
-A linguagem terá que rodar com base em algum arquivo, que é o JSON da AST da
-rinha especificado [aqui](https://github.com/aripiprazole/rinha-de-compiler/blob/main/SPECS.md).
-
-1. O arquivo terá que ser lido de `/var/rinha/source.rinha.json`
-2. Poderá também ser lido de `/var/rinha/source.rinha`, se você quiser ler a AST
-na mão.
-
-A linguagem é uma linguagem de programação dinâmica, como JavaScript, Ruby, etc.
-
-O projeto da rinha de compilador, tem um "interpretador" do json, que retorna
-um AST, e o código terá que ser testado de diferentes formas, como outros
-algorítimos além de Fibonacci.
-
-## Exemplo
-
-Exemplo com fibonacci
-
-```javascript
-let fib = fn (n) => {
-  if (n < 2) {
-    n
-  } else {
-    fib(n - 1) + fib(n - 2)
-  }
-};
-
-print("fib: " + fib(10))
-```
-
-# Competição
-
-O prazo para mandar os PRs, é até o dia 23/09, depois disso serão negados o
-projeto.
-
-Será liberado para ajustes até o dia 25/09, você poderá arrumar sua implementação,
-depois da publicação dos testes.
-
-## Recursos
-
-Alguns recursos úteis para aprender como fazer seu próprio interpretador ou compilador são:
-
-- https://www.youtube.com/watch?v=t77ThZNCJGY
-- https://www.youtube.com/watch?v=LCslqgM48D4
-- https://ruslanspivak.com/lsbasi-part1/
-- https://www.youtube.com/playlist?list=PLjcmNukBom6--0we1zrpoUE2GuRD-Me6W
-- https://www.plai.org/
-
-Fique ligado que alguns vídeos e posts úteis chegarão em breve.
-
-[banner]: ./img/banner.png
+Você também pode criar seus próprios arquivos .rinha e gerar os respectivos JSONs usando a ferramenta da Rinha.
