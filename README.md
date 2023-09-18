@@ -28,7 +28,7 @@ Para executar o projeto, é necessário ter instalado:
 ## Como clonar a aplicação
 Para clonar a aplicação, você precisa ter o Git instalado no seu computador. Em seguida, execute o seguinte comando no terminal:
 
-```git clone https://github.com/seu-usuario/meu-projeto.git```
+```git clone https://github.com/Ronaldo3030/rinha-de-compiler-js```
 
 Isso irá criar uma pasta chamada meu-projeto com os arquivos do projeto.
 ## Como usar
