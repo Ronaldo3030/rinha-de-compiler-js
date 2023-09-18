@@ -70,6 +70,12 @@ const binaryOp = (op) => {
       return "&&";
     case "Or":
       return "||";
+    case "Eq":
+      return "=="
+    case "Neq":
+      return "!="
+    case "Rem":
+      return "%"
     default:
       break;
   }
